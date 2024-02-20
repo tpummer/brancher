@@ -46,11 +46,11 @@ if(isset($_GET['op']) == 'checkout' && isset($_GET['branch']) && in_array($_GET[
 
 
 $lastCommit = $repo->getLastCommit();
-var_dump($lastCommit);
+#uncomment to view compltee commit object
+#var_dump($lastCommit);
 $lastCommitId = $lastCommit->getId();
 $lastCommitAuthor = $lastCommit->getAuthorName();
 $lastCommitDate = $lastCommit->getAuthorDate();
-var_dump($lastCommitDate);
 $lastCommitMessage = $lastCommit->getSubject();
 
 # set up smarty variables
