@@ -1,0 +1,7 @@
+# software itself
+.env
+
+# composer
+/vendor/
+composer.phar
+composer.lock

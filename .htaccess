@@ -1,0 +1,23 @@
+# HTTP -> HTTPS
+#RewriteEngine On
+#RewriteCond %{SERVER_PORT} 80
+#RewriteCond %{HTTP_HOST} !^localhost [NC]
+RewriteRule ^(.*)$ https://revorix-brancher.nullpointer.at/$1 [R,L]
+
+AuthName "Restricted."
+AuthType Basic
+AuthUserFile /home/www/vhosts/nullpointer.at/.htusers
+<Limit GET>
+  Require valid-user
+</Limit>
+
+########## Composer ##########
+<Files composer.json>
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files composer.lock>
+    Order allow,deny
+    Deny from all
+</Files>
